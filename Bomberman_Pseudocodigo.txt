@@ -1,0 +1,49 @@
+INICIO
+
+    // Definir el tamaño del tablero
+    N ← 10  // Tamaño del tablero NxN
+    tablero ← MATRIZ[N][N]
+
+    // Inicializar el tablero vacío con '-'
+    PARA i DESDE 0 HASTA N-1
+        PARA j DESDE 0 HASTA N-1
+            tablero[i][j] ← '-'
+        FIN PARA
+    FIN PARA
+
+    // Colocar 5 bombas de forma aleatoria
+    bombas_colocadas ← 0
+    MIENTRAS bombas_colocadas < 5
+        x ← ALEATORIO(0, N-1)  // Generar posición aleatoria en fila
+        y ← ALEATORIO(0, N-1)  // Generar posición aleatoria en columna
+
+        // Verificar si la posición está vacía
+        SI tablero[x][y] = '-'
+            tablero[x][y] ← 'B'  // Colocar bomba
+            bombas_colocadas ← bombas_colocadas + 1
+        FIN SI
+    FIN MIENTRAS
+
+    // Colocar 4 llamas de forma aleatoria
+    llamas_colocadas ← 0
+    MIENTRAS llamas_colocadas < 4
+        x ← ALEATORIO(0, N-1)  // Generar posición aleatoria en fila
+        y ← ALEATORIO(0, N-1)  // Generar posición aleatoria en columna
+
+        // Verificar si la posición está vacía
+        SI tablero[x][y] = '-'
+            tablero[x][y] ← 'L'  // Colocar llama
+            llamas_colocadas ← llamas_colocadas + 1
+        FIN SI
+    FIN MIENTRAS
+
+    // Mostrar el tablero final
+    IMPRIMIR "Tablero de Bomberman:"
+    PARA i DESDE 0 HASTA N-1
+        PARA j DESDE 0 HASTA N-1
+            IMPRIMIR tablero[i][j]
+        FIN PARA
+        IMPRIMIR NUEVA_LINEA
+    FIN PARA
+
+FIN
