@@ -1,0 +1,1 @@
+# Actividad-3-corte-3-Pseodocodigo-
